@@ -1,15 +1,22 @@
 <?php
 require "koneksi.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$nama     = $_POST["nama"];
-$paket  = $_POST["paket"];
-$deskripsi = $_POST["deskripsi"];
-$sql = "INSERT INTO campaign (judul, kategori, target, deskripsi)
-VALUES (?, ?, ?, ?)";
-mysqli_execute_query($koneksi, $sql,
-[$nama, $kategori, $target, $deskripsi]);
-header("Location: index.php");
-exit;
+
+    $nama = $_POST["nama"];
+    $paket_cuci = $_POST["paket"];
+
+    $sql = "INSERT INTO paw_handson (nama, paket_cuci)
+            VALUES (?, ?)";
+
+    mysqli_execute_query(
+        $koneksi,
+        $sql,
+        [$nama, $paket_cuci]
+    );
+
+    header("Location: index.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>
