@@ -4,15 +4,14 @@ require "koneksi.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nama = $_POST["nama"];
+    $no_telp = $_POST["no_telp"];
     $paket_cuci = $_POST["paket"];
 
-    $sql = "INSERT INTO paw_handson (nama, paket_cuci)
-            VALUES (?, ?)";
+    $sql = "INSERT INTO paw_handson (nama, no_telp, paket_cuci)
+            VALUES (?, ?, ?)";
 
-    mysqli_execute_query(
-        $koneksi,
-        $sql,
-        [$nama, $paket_cuci]
+    mysqli_execute_query($koneksi, $sql,
+        [$nama, $no_telp, $paket_cuci]
     );
 
     header("Location: index.php");
@@ -20,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="id"></html>
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Pilih Layanan Laundry</title>
@@ -31,11 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post">
         <div class="mb-3">
             <label for="nama">Nama Pengguna:</label>
-            <input type="text" id="nama" name="nama" required><br><br>
+            <input type="text" class="form-control" id="nama" name="nama" required><br><br>
+        </div>
+        <div class="mb-3">
+            <label for="no_telp" class="form-label">Nomor Telepon</label>
+            <input type="tel" class="form-control" id="no_telp" name="no_telp" required> <br><br>
         </div>
         <div class="mb-3">
             <label for="paket">Paket Cuci:</label>
-            <select id="paket" name="paket" required>
+            <select class="form-control" id="paket" name="paket" required>
                 <option value="">Pilih Paket</option>
                 <option value="Cuci Setrika Reguler">Cuci Setrika Reguler</option>
                 <option value="Cuci Setrika Express">Cuci Setrika Express</option>
@@ -45,3 +49,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit" class="btn btn-primary">submit</button>
     </form>
 </body>
+</html>
