@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Tetap mempertahankan background gambar Will Smith */
+    background: url('index.jpg') center / cover no-repeat fixed;
+    padding: 2rem;
+}
+
+/* Container utama kartu tabel */
+.table {
+    width: 92vw;
+    max-width: 1050px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Header bagian atas tabel */
+.table_header {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.table_header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+}
+
+/* Tombol Tambah Customer */
+.btn-tambah {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-tambah:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Area Isi Tabel */
+.table_body {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead th {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 14px 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.08);
+}
+
+tbody td {
+    padding: 14px 18px;
+    font-size: 0.92rem;
+    color: #334155;
+    vertical-align: middle;
+}
+
+/* Tombol Aksi: Edit & Hapus */
+.btn-action {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.btn-edit {
+    background-color: #e0e7ff;
+    color: #3730a3 !important;
+    margin-right: 6px;
+}
+
+.btn-edit:hover {
+    background-color: #c7d2fe;
+}
+
+.btn-delete {
+    background-color: #fee2e2;
+    color: #991b1b !important;
+}
+
+.btn-delete:hover {
+    background-color: #fecaca;
+}
